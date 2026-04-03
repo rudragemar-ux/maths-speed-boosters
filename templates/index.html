@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Speed Booster - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body> 
+    <div class="navbar">
+        <h2>Maths Speed Booster 🚀</h2>
+        <div class="nav-right">
+            <a href="/" class="home-btn">🏠</a>
+            <button onclick="window.location.href='/history'" class="history-btn">History</button>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card"><h3>⏱ Timed Tests</h3><p>Improve speed with quizzes</p></div>
+        <div class="feature-card"><h3>📊 Tracking</h3><p>Monitor your stats</p></div>
+        <div class="feature-card"><h3>🎯 Exercises</h3><p>Topic-wise practice</p></div>
+    </div>
+
+    <h2 class="section-title">⭐ Choose Your Practice Area ⭐</h2>
+    <div class="options">
+        <div class="card" onclick="selectType('addition', this)">Addition</div>
+        <div class="card" onclick="selectType('subtraction', this)">Subtraction</div>
+        <div class="card" onclick="selectType('multiplication', this)">Multiplication</div>
+        <div class="card" onclick="selectType('division', this)">Division</div>
+        <div class="card" onclick="selectType('mixed', this)">Mental Maths</div>
+    </div>
+
+    <h2>🎯 Choose Difficulty Level</h2>
+    <div class="level-box">
+        <button onclick="setLevel('easy', this)" class="level-btn">Easy</button>
+        <button onclick="setLevel('medium', this)" class="level-btn">Medium</button>
+        <button onclick="setLevel('hard', this)" class="level-btn">Hard</button>
+    </div>
+
+    <div id="welcomePopup" class="popup">
+        <div class="popup-box">
+            <h2>Welcome 🎯</h2>
+            <p>Please enter your name</p>
+            <input type="text" id="playerInput" placeholder="Enter your name">
+            <br><br>
+            <button onclick="saveUser()">OK</button>
+        </div>
+    </div>
+
+    <h2>Ready to Become a Master?</h2>
+    <button class="start-btn" onclick="startPractice()">Start Practice</button>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

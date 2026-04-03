@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice - Maths Speed Booster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="navbar">
+        <h2 id="practiceUser">Maths Speed Booster 🚀</h2>
+        <div class="nav-right">
+            <div class="user-info">
+    <span id="practiceUser"></span>
+    <button onclick="changeName()" class="change-btn">Change</button>
+</div>
+            <a href="/" class="home-btn">🏠</a>
+            <button onclick="exitPractice()" class="history-btn">Exit</button>
+        </div>
+    </div>
+
+    <div id="timeSelection" style="margin-top: 50px;">
+        <h2 class="menu-title">⏱️Choose Your Practice Time</h2>
+        <div class="time-options" style="display:flex; justify-content:center; gap:15px;">
+            <button class="time-btn" onclick="setTimer(30, this)">30 sec</button>
+            <button class="time-btn" onclick="setTimer(60, this)">60 sec</button>
+            <button class="time-btn" onclick="setTimer(90, this)">90 sec</button>
+        </div>
+    </div>
+
+    <div id="countdownFilm" class="countdown-film" style="display:none;"></div>
+
+    <div id="questionArea" style="display:none; margin-top:50px;">
+        <div id="timerBox">Time Left: <span id="time" style="font-weight:bold; color:red;">30</span>s</div>
+        <div class="practice-box" style="margin: 0 auto;">
+            <h1 id="question" style="font-size: 50px;">--</h1>
+            <input type="number" id="answer" placeholder="?" autocomplete="off">
+            <div id="result" style="height: 30px; font-weight: bold; margin-top: 10px;"></div>
+        </div>
+    </div>
+
+    <div id="resultScreen" class="result-screen">
+        <div class="result-card">
+            <h2>Practice Finished! 🥳</h2>
+            <p>Total Questions: <span id="totalQ">0</span></p>
+            <p>Correct: <span id="correctQ">0</span></p>
+            <p>Wrong: <span id="wrongQ">0</span></p>
+            <p>Accuracy: <span id="accuracyQ">0</span>%</p>
+            <div class="result-buttons">
+                <button onclick="playAgain()">Play Again</button>
+                <button onclick="goHome()">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

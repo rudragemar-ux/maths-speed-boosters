@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background:#f4f4f4;">
+    <h1>📊 Performance History</h1>
+    <div style="max-width: 600px; margin: auto;">
+        {% for s in scores %}
+        <div class="card" style="text-align:left; width: 90%; background: white;">
+            <h3>👤 {{ s.name }}</h3>
+            <p>Score: {{ s.correct }}/{{ s.total }} | Accuracy: {{ s.accuracy }}%</p>
+        </div>
+        {% endfor %}
+        <button onclick="window.location.href='/'" class="start-btn">Back to Home</button>
+    </div>
+</body>
+</html>
